@@ -1,0 +1,14 @@
+module flag (full, segment_leds);
+  
+  input full;
+  output reg [6:0] segment_leds;
+  
+  always @(full)
+  begin
+    case(full)
+      0 : segment_leds = 7'b0110000; // empty
+      1 : segment_leds = 7'b0111000; // full
+      2 : segment_leds = 7'b0110111; // not full and empty
+    endcase
+  end
+endmodule

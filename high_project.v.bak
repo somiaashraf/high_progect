@@ -1,0 +1,14 @@
+module high_project (clk, reset, up, down, count);
+  input clk , reset, up, down;
+  output [3:0] count;
+  wire clk0_01Hz, Q, in, ;
+  
+  clock_divider clock_div(clk, reset , clk0_01Hz);
+  
+  flip_flop ff1(clk0_01Hz, reset, up, in);
+  
+  flip_flop ff2(clk0_01Hz, reset, down, de);
+
+  increment increment(in, de, reset, count);
+  
+endmodule
